@@ -13,10 +13,10 @@ export default function Home() {
   const [localTodos, setLocalTodos] = useState<Todo[]>([]);
 
   const { data, isLoading, isError } = useQuery({
-    queryKey: ["todos", page],
-    queryFn: () => fetchTodos(page),
-    keepPreviousData: true,
-  });
+  queryKey: ["todos", page],
+  queryFn: () => fetchTodos(page),
+  placeholderData: (previousData) => previousData,
+});
 
   const handleAddTodo = () => {
     if (!newTodo.trim()) return;

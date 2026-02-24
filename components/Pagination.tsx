@@ -1,9 +1,11 @@
+import { Dispatch, SetStateAction } from "react";
+
 export default function Pagination({
   page,
   setPage,
 }: {
   page: number;
-  setPage: (page: number) => void;
+  setPage: Dispatch<SetStateAction<number>>;
 }) {
   return (
     <div className="flex justify-between items-center mt-10">
